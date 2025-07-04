@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        .card{
+            /* border: 4px solid green; */
+            box-shadow: 0 0 10px green;
+            padding: 10px;
+            width: 270px;
+            height: 400px;
+        }
+        #cardContainer{
+            display:flex;
+            justify-content: space-evenly;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        var imageUrl="https://media.istockphoto.com/id/1369199360/photo/portrait-of-a-handsome-young-businessman-working-in-office.jpg?s=1024x1024&w=is&k=20&c=-xjY_sj5IU0ibPJn3t8Qf63XyBlunViU3oeT2RwJ3RE=";
+        let card=(
+            <div class="card">
+                <img 
+                    src={imageUrl}
+                    width="100%"
+                    height="250" 
+                />
+                <h3>Chris John</h3>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+                <button>Profile Details</button>
+            </div>
+        );
+        let container = (
+                        <div id="cardContainer">       
+                            {card}
+                            {card}
+                            {card}
+                            {card}
+                        </div>
+                       );//<jsx-ele> {javascript code} </jsx-element>, also  <jsx-element attribute-1={javascript code} >----</jsx-element>
+        ReactDOM.render(container,document.getElementById("root"));
+    </script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        .card{
+            /* border: 4px solid green; */
+            box-shadow: 0 0 10px green;
+            padding: 10px;
+            width: 270px;
+            height: 400px;
+        }
+        #cardContainer{
+            display:flex;
+            justify-content: space-evenly;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+
+        function createCard(name,imageUrl){
+            // JSX code to create a Card
+             
+             return <div class="card">
+                <img 
+                    src={imageUrl}
+                    width="100%"
+                    height="250" 
+                />
+                <h3>{name}</h3>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+                <button>Profile Details</button>
+            </div>;
+        }
+
+        function multipleCard(){
+            return (
+                <div id="cardContainer">
+                    {createCard("Vivek Kumar Singh","https://media.istockphoto.com/id/1369199360/photo/portrait-of-a-handsome-young-businessman-working-in-office.jpg?s=1024x1024&w=is&k=20&c=-xjY_sj5IU0ibPJn3t8Qf63XyBlunViU3oeT2RwJ3RE=")}    
+                    {createCard("Sahib Reja","https://media.istockphoto.com/id/1399565382/photo/young-happy-mixed-race-businessman-standing-with-his-arms-crossed-working-alone-in-an-office.jpg?s=612x612&w=0&k=20&c=buXwOYjA_tjt2O3-kcSKqkTp2lxKWJJ_Ttx2PhYe3VM=")}    
+                    {createCard("Ashish Kr. Singh","https://media.istockphoto.com/id/1450340623/photo/portrait-of-successful-mature-boss-senior-businessman-in-glasses-asian-looking-at-camera-and.jpg?s=612x612&w=0&k=20&c=f0EqWiUuID5VB_NxBUEDn92W2HLENR15CFFPzr-I4XE=")}    
+                    {createCard("Utkrisht Kumar","https://media.istockphoto.com/id/1487345042/photo/smiling-young-businessman-standing-in-the-corridor-of-an-office.jpg?s=612x612&w=0&k=20&c=8uV_8l-pGT4Z7oDRBmX73fBBf83LOBejXB22v0k8Fo0=")}    
+                </div>
+            );
+        }
+
+        ReactDOM.render(multipleCard(), document.getElementById("root"));
+    </Script>
+</body>
+</html>

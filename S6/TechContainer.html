@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        #container{
+            /* border: 4px solid red; */
+            box-shadow:0 0 10px red;
+            margin-bottom:30px;
+            padding:20px;
+            width:1200px;
+            height:200px;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <!-- In React, whenever we want to create any UI then, that UI we will always create in JS function -->
+     <!-- Why we have to create UI inside the JS Function
+        ==>  We can re-use the UI
+        ==> We can pass dynamic data to the UI
+     -->
+
+     <!-- In React, we can call our function without using {} these curly braces also but we will have to 
+        to define the function as well as have to write the function name in Upper case letter inside the tag or self-closing tag
+        <CreateContainer></CreateContainer> like this or like  this ===> <CreateContainer/>  
+    -->
+    <!-- Components represents view on the screen or on the web page -->
+    <!-- Functional Component ==> It is a simple JS function whose name starts with uppercase and 
+     which return User Interface(in the form of JSX or React Elements)
+    -->
+
+    <!-- There are two types of Component in React
+        1. Functional Component
+        2. Class Component(Not recommended to use) 
+    -->
+    <script type="text/babel">
+        // function createContainer(title){
+        //     return (
+        //     <div id="container">
+        //         <h2>{title}</h2>
+        //         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illo optio, porro facere maxime esse repudiandae temporibus sed laudantium repellat nisi similique quibusdam dolorum! Consectetur animi expedita ad, quo culpa minus.
+        //         Repudiandae praesentium odit ex blanditiis officiis alias ab voluptatum, error id veniam aspernatur dolor magnam molestias excepturi autem quis veritatis. Eos, magni sit facere consectetur atque modi dicta quam. Eveniet?
+        //         Magnam, sed minus consequuntur est odit tempora laudantium molestias modi! Nesciunt corrupti, architecto, sint facere eaque sed vero molestiae tempora, pariatur totam rerum optio ipsum debitis unde. Laudantium, iste officia.
+        //         Quas, reprehenderit quo odit reiciendis nobis repellat quisquam velit eaque? Eumt dolor aut nostrum similique maxime itaque officiis neque praesentium dolore repellat id maiores et rerum ab cupiditate atque nulla dolorum consectetur. Suscipit quaerat modi quas?</p>
+        //         <button>More Details</button>
+        //     </div>
+        //    );
+        // }
+
+        function CreateContainer(){
+            return (
+            <div id="container">
+                <h2>React JS</h2>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illo optio, porro facere maxime esse repudiandae temporibus sed laudantium repellat nisi similique quibusdam dolorum! Consectetur animi expedita ad, quo culpa minus.
+                Repudiandae praesentium odit ex blanditiis officiis alias ab voluptatum, error id veniam aspernatur dolor magnam molestias excepturi autem quis veritatis. Eos, magni sit facere consectetur atque modi dicta quam. Eveniet?
+                Magnam, sed minus consequuntur est odit tempora laudantium molestias modi! Nesciunt corrupti, architecto, sint facere eaque sed vero molestiae tempora, pariatur totam rerum optio ipsum debitis unde. Laudantium, iste officia.
+                Quas, reprehenderit quo odit reiciendis nobis repellat quisquam velit eaque? Eumt dolor aut nostrum similique maxime itaque officiis neque praesentium dolore repellat id maiores et rerum ab cupiditate atque nulla dolorum consectetur. Suscipit quaerat modi quas?</p>
+                <button>More Details</button>
+            </div>
+           );
+        }
+        // function multipleContainer(){
+        //     return (
+        //         <div>
+        //             {createContainer("React JS")}
+        //             {createContainer("Angular 18")}
+        //             {createContainer("Node JS")}    
+        //         </div>
+        //     );
+        // }
+        function MultipleContainer(){
+            return (
+                <div>
+                   <CreateContainer />   
+                   <CreateContainer />   
+                   <CreateContainer />   
+                </div>
+            );
+        }
+        // ReactDOM.render(multipleContainer(),document.getElementById("root"));
+        // ReactDOM.render(MultipleContainer(),document.getElementById("root"));
+        ReactDOM.render(<MultipleContainer/>,document.getElementById("root"));
+    </script>
+</body>
+</html>

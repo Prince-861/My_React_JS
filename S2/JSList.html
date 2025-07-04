@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List using JS</title>
+</head>
+<body>
+    <h2>List in JS</h2>
+    <!-- we can create for loop for creating the same content again or again or we can use the concept of function here -->
+    <!-- <script>
+    for(i=0;i<2;i++){
+        var olDomElement = document.createElement("ol");//<ol></ol>
+       
+        var liDomElement1 = document.createElement("li");
+        var liDomElement2 = document.createElement("li");
+        var liDomElement3 = document.createElement("li");
+        var liDomElement4 = document.createElement("li");
+        
+        // olDomElement.appendChild(liDomElement1);
+        // olDomElement.appendChild(liDomElement2);
+        // olDomElement.appendChild(liDomElement3);
+        // olDomElement.appendChild(liDomElement4);
+
+        olDomElement.append(liDomElement1,liDomElement2,liDomElement3,liDomElement4);
+
+        liDomElement1.innerText="Apple";//<li>Apple</li>
+        liDomElement2.innerText="Samsung";//<li>Samsung</li>
+        liDomElement3.innerText="Oppo";
+        liDomElement4.innerText="OnePlus";
+
+        // Add OrderedList with ListItems in the DOM
+        document.querySelector("body").appendChild(olDomElement);
+
+    }
+
+
+    </script> -->
+<!-- Here in JS, we are reusing the code -->
+    <script>
+        function createList(){
+            var olDomElement = document.createElement("ol");//<ol></ol>
+       
+            var liDomElement1 = document.createElement("li");
+            var liDomElement2 = document.createElement("li");
+            var liDomElement3 = document.createElement("li");
+            var liDomElement4 = document.createElement("li");
+            
+            // olDomElement.appendChild(liDomElement1);
+            // olDomElement.appendChild(liDomElement2);
+            // olDomElement.appendChild(liDomElement3);
+            // olDomElement.appendChild(liDomElement4);
+
+            olDomElement.append(liDomElement1,liDomElement2,liDomElement3,liDomElement4);
+
+            liDomElement1.innerText="Apple";//<li>Apple</li>
+            liDomElement2.innerText="Samsung";//<li>Samsung</li>
+            liDomElement3.innerText="Oppo";
+            liDomElement4.innerText="OnePlus";
+
+            // Add OrderedList with ListItems in the DOM
+            document.querySelector("body").appendChild(olDomElement);
+
+        }
+
+        createList();
+        createList();
+        createList();
+        createList();
+    </script>
+</body>
+</html>

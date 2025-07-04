@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        function CreateUI(props){
+            return (
+                    <div>
+                        <img src={props.url}
+                        width="70"
+                        height="70"
+                        />
+                        <p>{props.title}</p>
+                    </div>
+                );
+        }
+
+        function App(){
+            const containerStyle={
+                display:"flex",
+                justifyContent:"space-evenly"
+            };
+            return (
+                    <div style={containerStyle}>
+                    <CreateUI title="Minutes" url="https://rukminim2.flixcart.com/fk-p-flap/64/64/image/a22a213ca6221b65.png?q=100"/>
+                    <CreateUI title="Mobile & Tablets" url="https://rukminim2.flixcart.com/fk-p-flap/64/64/image/5f2ee7f883cdb774.png?q=100"/>
+                    <CreateUI title="Fashion" url="https://rukminim2.flixcart.com/fk-p-flap/64/64/image/ff559cb9d803d424.png?q=100"/>
+                    <CreateUI title="Electronics" url="https://rukminim2.flixcart.com/fk-p-flap/64/64/image/af646c36d74c4be9.png?q=100"/>
+                    <CreateUI title="Home & Furniture" url="https://rukminim2.flixcart.com/fk-p-flap/64/64/image/1788f177649e6991.png?q=100"/>
+                    <CreateUI title="TVs & Appliances" url="https://rukminim2.flixcart.com/fk-p-flap/64/64/image/e90944802d996756.jpg?q=100"/>
+                    <CreateUI title="Flight Bookings" url="https://rukminim2.flixcart.com/fk-p-flap/64/64/image/3c647c2e0d937dc5.png?q=100"/>
+                    <CreateUI title="Beauty, Food..." url="https://rukminim2.flixcart.com/fk-p-flap/64/64/image/b3020c99672953b9.png?q=100"/>
+                    <CreateUI title="Grocery" url="https://rukminim2.flixcart.com/fk-p-flap/64/64/image/aeeada80b1863116.png?q=100"/>
+                </div>
+            );
+        }
+
+        ReactDOM.render(<App/>, document.getElementById("root"));
+    </script>
+</body>
+</html>

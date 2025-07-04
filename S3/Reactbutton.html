@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+</head>
+<body id="body">
+    <script>
+        // Here we will write the React Code
+        // React provides---> some predefined objects and functions ---> using those objects and functions we will create react element which we will have to add in the DOM. 
+        // createElement() takes three things -->> tagname,object,content inside the children
+        var buttonReactElement = React.createElement(
+            "button",
+            {},
+            "React Button"
+        );//<button>React Button </button>
+
+        // ReactDOM is a library which is used to add React Elements inside the DOM.
+        // ReactDOM provides one function called as render() --->> ReactDOM.render(<React Element>,<DomElementReference>);
+        ReactDOM.render(buttonReactElement,document.getElementById("body"));//take my ReactElement and add inside this body
+    </script>
+</body>
+</html>

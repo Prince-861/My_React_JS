@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>JavaScript Button</h2>
+    <script>
+        // code to create a Button
+        var buttonDomElement = document.createElement("button");//when this line will execute--> it will create <button></button>
+        buttonDomElement.innerText="JavaScript Button";//whien this line executes--->> <button>JavaScript Button</button>
+
+        // to make above button visible to our UI 
+        // Add the Button in the DOM
+        document.querySelector("body").appendChild(buttonDomElement);
+    </script>
+  </body>
+</html>

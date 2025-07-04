@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="root"></div>
+    <!-- we want to create below tags using React -->
+     <!--
+     <div>
+        <div>
+            <div>
+                <h2></h2>
+                <p></p>
+            </div>
+        </div>
+     </div> 
+     -->
+    <script>
+        var container = React.createElement(
+            "div",
+            null,
+            React.createElement("div",
+            null,
+            React.createElement("div",null,[
+                React.createElement("h2",null,"React Elements"),
+                React.createElement("p",null,"React looks very very complex now")]
+            )));
+
+        ReactDOM.render(container,document.getElementById("root"));
+    // Till now we have developed React elements using directly React and then we are displaying it to the UI with the help of DOM using ReactDOM
+    // Developer ---> React ---> React Elements ---> DOM using ReactDOM ----> UI
+
+
+    // From now onwards
+    // Developer ----> JSX Elements ----> Babel Compiler(Transpiler) ----> React Elements -----> ReactDOM -----> DOM -----> UI
+
+    </script>
+</body>
+</html>

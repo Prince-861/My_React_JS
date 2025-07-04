@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <link rel="stylesheet" href="Home.css" />
+</head>
+
+<body>
+    <div id="root"></div>
+    <!-- Any Component which we assign to ReactDOM, that Component is considered as a Parent component
+     for entire application
+     -->
+    <!-- Rendering means calling + converting the Components into the React elements + adding into the DOM. -->
+    <script type="text/babel">
+        function CreateCard(props){//props={title:"",imageUrl:""} //Here we will receive our props and this parameter(props) will always be an object type.
+            // JSX code to create a Card
+             
+             return (
+                <div class="card">
+                <img 
+                    src={props.imageUrl}
+                    width="100%"
+                    height="250" 
+                />
+                <h3>{props.title}</h3>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+                <button>Profile Details</button>
+            </div>
+            );
+        }
+        function Header(){
+            return <div class="header"> 
+                    <div class="leftPanel flexContainer">
+                        <h1>First-Page-In-React</h1>
+                    </div>
+                    <div class="rightPanel flexContainer">
+                        <a href="">Home</a>    
+                        <a href="">Profile</a>    
+                        <a href="">Products</a>    
+                        <a href="">ContactUs</a>    
+                        <a href="">Login</a>    
+                    </div>
+                </div>
+        }
+        function Main(){
+            return (
+                // Using Attribute concept we can pass arguments to the components if it is rendered in the
+                // element or Tag Format
+
+                // Props are the properties of the component
+                // Props are used to pass the dynamic data or input data to the components.
+                // Props are used to share the data from Parent component to child component.
+
+                // Functional Components first parameter will always be an object.
+                // This object stores props or this object contains set of props as a properties.
+                <div class="main cardContainer">
+                    
+                    <CreateCard title="Vivek Kumar Singh" imageUrl="https://media.istockphoto.com/id/1369199360/photo/portrait-of-a-handsome-young-businessman-working-in-office.jpg?s=1024x1024&w=is&k=20&c=-xjY_sj5IU0ibPJn3t8Qf63XyBlunViU3oeT2RwJ3RE="/>
+                    <CreateCard title="Sahib Reja" imageUrl="https://media.istockphoto.com/id/1399565382/photo/young-happy-mixed-race-businessman-standing-with-his-arms-crossed-working-alone-in-an-office.jpg?s=612x612&w=0&k=20&c=buXwOYjA_tjt2O3-kcSKqkTp2lxKWJJ_Ttx2PhYe3VM=" />
+                    <CreateCard title="Ashish Kumar Singh" imageUrl="https://media.istockphoto.com/id/1450340623/photo/portrait-of-successful-mature-boss-senior-businessman-in-glasses-asian-looking-at-camera-and.jpg?s=612x612&w=0&k=20&c=f0EqWiUuID5VB_NxBUEDn92W2HLENR15CFFPzr-I4XE="/>
+                    <CreateCard title="Utkrisht Kumar" imageUrl="https://media.istockphoto.com/id/1487345042/photo/smiling-young-businessman-standing-in-the-corridor-of-an-office.jpg?s=612x612&w=0&k=20&c=8uV_8l-pGT4Z7oDRBmX73fBBf83LOBejXB22v0k8Fo0="/>
+                </div>
+            );
+        }
+        function Footer(){
+            return <div class="footer"> 
+                <h2>Footer Component</h2>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quasi quibusdam molestias voluptatem in eveniet ducimus temporibus dolorum nisi quam ipsa earum vero dolore qui vitae, sequi quod cum delectus rem explicabo magnam, ut iusto totam nihil. Eligendi, corporis quae cupiditate alias sapiente, dicta culpa ullam dolores autem perspiciatis provident. Cupiditate corrupti consequuntur quis, similique ea earum dolor dolorum dolore? Vero repellendus sunt obcaecati adipisci, rerum et earum unde dolorem dolor laudantium ratione repudiandae aliquam perferendis maiores quia similique quo. Qui laborum dolorem a, dolore id vitae nesciunt tenetur expedita accusamus quidem quibusdam, explicabo ea quas at fuga in eos? Eaque enim accusamus voluptates atque ut. Assumenda, voluptate itaque rem perferendis debitis incidunt natus autem et architecto maxime consectetur animi quod illo perspiciatis minus reprehenderit fuga voluptas laudantium. A atque unde aut officiis architecto, rem necessitatibus consectetur repellendus, praesentium, inventore harum sapiente explicabo iure? Voluptate placeat magni ea unde aspernatur pariatur?</p>
+                <a href="">Explore More</a>
+                </div>
+        }
+        function App(){
+            return (
+                <div>
+                    <Header />
+                    <Main />
+                    <Footer />
+                </div>
+            );
+        }
+        ReactDOM.render(<App/>, document.getElementById("root"));
+    </script>
+</body>
+</html>
