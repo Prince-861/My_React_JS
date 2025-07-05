@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        *{
+            margin:0;
+            font-family: Okra,Helvetica,sans-serif;
+        }
+        #container{
+            background-color:#f8f8f8;
+            padding:30px 120px;
+        }
+        .first{
+            font-weight:500px;
+            font-size: 30px;
+            font-weight: bold;
+            line-height: 36px;
+            color: rgb(28, 28, 28);
+            margin-top:10px;
+        }
+        .explore{
+            color:rgb(54,54,54);
+            font-weight:300px;
+            font-size: 18px;
+            line-height: 25px;
+            margin:10px 0;
+        }
+        .place{
+            color:rgb(239, 79, 95);
+            font-weight:300;
+            font-size:18px;
+            line-height:25px;
+            margin-top:10px;
+        }
+        .explore_place{
+            display:flex;
+            justify-content: space-between;
+            margin-top:10px;
+        }
+        .card-container{
+            position:relative;
+            width:250px;
+            height:300px;
+            overflow: hidden;
+            border-radius: 8px;
+        }
+        .card-container img{
+            width:100%;
+            height:100%;
+            display:block;
+            object-fit:cover;
+        }
+        .overlay{
+            position:absolute;
+            bottom:0;
+            left:0;
+            width:100%;
+            background:linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+            color:white;
+            padding:10px;
+        }
+        
+        .trending{
+            font-weight:300;
+            font-size: 18px;
+            line-height: 27px;
+            
+        }
+        .place_count{
+            font-weight:400;
+            font-size:14px;
+            line-height:17px;
+        }
+        .cards{
+            display:flex;
+            justify-content: space-between;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        function CreateCard(props){
+            return (
+                <div class="card-container">
+                    <img 
+                    src={props.imageUrl}
+                    alt="Dining Out"
+                    />
+                    <div className="overlay">
+                        <p className="trending">{props.trending}</p>
+                        <p className="place_count">{props.place_count}</p>     
+                    </div>   
+                </div>
+            );
+        }
+        function CreateContainer(){
+            return (
+                <div id="container">
+                    <p class="first">Collections</p>
+                    <div class="explore_place">
+                        <p className="explore">Explore curated lists of top restaurants, cafes, pubs, and bars in Bengaluru, based on trends</p>
+                        <p className="place">All collections in Bengaluru</p>
+                    </div>
+                    <div className="cards">
+                        <CreateCard trending="Top Trending Spots" place_count="40 Places" imageUrl="https://b.zmtcdn.com/data/pictures/6/21623466/8dac48758e831fc9803e20b7129b740c_featured_v2.jpg"/>
+                        <CreateCard trending="Sky High Shipx" place_count="60 Places" imageUrl="https://b.zmtcdn.com/data/pictures/0/21538950/8509792e9442ecc4d9ed4694f07993a0_featured_v2.jpg"/>
+                        <CreateCard trending="Newly In Town" place_count="30 Places" imageUrl="https://b.zmtcdn.com/data/pictures/3/20937763/91be703172df9f525fc0a85221174f56_featured_v2.jpg"/>
+                        <CreateCard trending="You Mee" place_count="50 Places" imageUrl="https://b.zmtcdn.com/data/pictures/chains/0/18802460/b6fd131cec4f16e3228582a7a6bb2cad_featured_v2.jpg"/>
+                    </div>
+                </div>
+            );
+        }
+
+        ReactDOM.render(<CreateContainer />, document.getElementById("root"));
+    </script>
+</body>
+</html>
