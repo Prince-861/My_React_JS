@@ -9,7 +9,7 @@ function Counter(){
 
     // How to create or get a State variable?
     // ===>> Using useState(), we can get a state variable
-    // var[state,setState] = useState();//useState() will contain exactly two elements --> a variable(state) and a setter function (setState)
+    // var[state,setState] = useState();//useState() will return (one array) which will contain --->>  exactly two elements --> a variable(state) and a setter function (setState)
     
     //How to update the state variable?
     // ===>> Using setter function, i.e. setState() we can update the data of state variable. 
@@ -17,13 +17,16 @@ function Counter(){
     // var count = 0;
 
     var [state, setState] = useState(0);//initially, in state there is not data so by-default it will be undefined --> state = undefined
-
+    console.log("Re-rendering");
+    
     const increaseCount = () => {
         // count=count+1;
         // count+=1;
         // count++;
         // console.log(count);
         setState(state + 1);//in setState() function we can directly pass some data or we can also pass some expression as well.
+        setState(state + 1);
+        setState(state + 4);//whatever writing we are writing in the last setState() that many times state is being updated here.
     };
 
     return (
