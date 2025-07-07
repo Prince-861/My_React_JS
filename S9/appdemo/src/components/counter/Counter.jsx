@@ -24,9 +24,29 @@ function Counter(){
         // count+=1;
         // count++;
         // console.log(count);
-        setState(state + 1);//in setState() function we can directly pass some data or we can also pass some expression as well.
-        setState(state + 1);
-        setState(state + 4);//whatever writing we are writing in the last setState() that many times state is being updated here.
+
+        // Queue DS is used to store the same function multiple times that is being called again and again and at last it will render the output as per the last function for one state variable.
+        // setState(state + 1);//in setState() function we can directly pass some data or we can also pass some expression as well.
+        // setState(state + 1);
+        // setState(state + 4);//whatever writing we are writing in the last setState() that many times state is being updated here.
+        // console.log(state); //setState() is an asynchronous function i.e. first console.log() function executes then the setState() function executes.
+    
+        // function(callback function) that is passed as an argument to setState() function is called as an updater function and this
+        // updater function will always return something and it will take one parameter which will consist the previous state not the initial state. 
+    
+        // If we want to change the UI as many times it is called then we will use updater function inside the setState function.
+        setState((prevState) => {//0
+            return prevState + 1;//1
+        });
+        
+        setState((prevState) =>{//1
+            return prevState+1;//2
+        });
+
+        setState((prevState) =>{//2
+            return prevState + 1;//3
+        });
+    
     };
 
     return (
