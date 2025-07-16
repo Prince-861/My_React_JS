@@ -14,9 +14,19 @@ function Counter(){
     //How to update the state variable?
     // ===>> Using setter function, i.e. setState() we can update the data of state variable. 
 
-    // var count = 0;
+    // Any function whose name starts with the word use(useState()), all those functions are called as React Hook.
+    // Rules of React Hook
+    // 1. React Hooks we can use only inside the Functional Component.
+    // 2. React Hooks should be called at the top-level of the Functional Component ---> means at the starting line inside the Functional Component.
+    // 3. Hooks cannot be called outside the component or inside JSX or inside any Event Handler.
 
+    // What is React Hook?
+    // ==> React Hooks is a simple JS Function with some rules.
+
+    // React 16(Major Changes)---> Functional Component(instead of Class Component)
+    // var count = 0;
     var [state, setState] = useState(0);//initially, in state there is not data so by-default it will be undefined --> state = undefined
+    var [count, setCount] = useState(0);
     console.log("Re-rendering");
     
     const increaseCount = () => {
@@ -38,6 +48,8 @@ function Counter(){
         setState((prevState) => {//0
             return prevState + 1;//1
         });
+
+        setCount(7);
         
         setState((prevState) =>{//1
             return prevState+1;//2
@@ -46,13 +58,18 @@ function Counter(){
         setState((prevState) =>{//2
             return prevState + 1;//3
         });
+
+        setCount((prevCount)=>{
+            return prevCount+7;
+        });
     
     };
 
     return (
         <div className="counter">
             <h2>Counter App in React</h2>
-            <p>Count value is : {state}</p>
+            <p>State value is : {state}</p>
+            <p>Count value is : {count}</p>
             {/* In JS we write like below */}
             {/* <button onclick="increaseCount()">incCount</button>*/}
             {/* In React we write like below */}
