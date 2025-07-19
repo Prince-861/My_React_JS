@@ -29,6 +29,7 @@ function Counter(){
     var [count, setCount] = useState(0);
     console.log("Re-rendering");
     
+    // Here increaseCount is our event Handler. So, hooks cannot be called inside the eventHandler.
     const increaseCount = () => {
         // count=count+1;
         // count+=1;
